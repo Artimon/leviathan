@@ -4,6 +4,19 @@
  * Session value retrieval/storage.
  */
 class Leviathan_Session extends Leviathan_GlobalsAbstract {
+	private static $instance;
+
+	/**
+	 * @return Leviathan_Session
+	 */
+	public static function getInstance() {
+		if (self::$instance === null) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
 	/**
 	 * @param $index
 	 * @param string|int|float|null $default

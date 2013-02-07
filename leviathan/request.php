@@ -4,6 +4,19 @@
  * Request data retrieval.
  */
 class Leviathan_Request extends Leviathan_GlobalsAbstract {
+	private static $instance;
+
+	/**
+	 * @return Leviathan_Request
+	 */
+	public static function getInstance() {
+		if (self::$instance === null) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
 	/**
 	 * Return defined get parameter.
 	 *
