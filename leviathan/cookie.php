@@ -16,10 +16,13 @@ class Leviathan_Cookie extends Leviathan_GlobalsAbstract {
 	/**
 	 * @param string|int|float $index
 	 * @param string|int|float $value
+	 * @param int $duration
 	 * @return Leviathan_Session
 	 */
-	public function store($index, $value) {
+	public function store($index, $value, $duration) {
 		$this->toSource($_COOKIE, $index, $value);
+
+		setcookie($index, $value, time() + $duration);
 
 		return $this;
 	}
