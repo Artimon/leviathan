@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Class Leviathan_Token
+ *
+ * Usage:
+ * <input type"hidden" name="token" value="' . Leviathan_Token::getInstance()->get() . '">
+ *
+ * if (Leviathan_Token::getInstance()->valid('token')) { ... }
+ */
 class Leviathan_Token {
 	const LEVIATHAN_TOKEN = 'leviathan_token';
 
