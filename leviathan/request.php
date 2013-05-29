@@ -25,6 +25,8 @@ class Leviathan_Request extends Leviathan_GlobalsAbstract {
 	 * @return string|array
 	 */
 	public function get($index, $default = null) {
+		$this->purify($_GET, 'get');
+
 		return $this->fromSource($_GET, $index, $default);
 	}
 
@@ -36,6 +38,8 @@ class Leviathan_Request extends Leviathan_GlobalsAbstract {
 	 * @return string|array
 	 */
 	public function post($index, $default = null) {
+		$this->purify($_POST, 'post');
+
 		return $this->fromSource($_POST, $index, $default);
 	}
 
@@ -47,6 +51,8 @@ class Leviathan_Request extends Leviathan_GlobalsAbstract {
 	 * @return string|array
 	 */
 	public function both($index, $default = null) {
+		$this->purify($_REQUEST, 'request');
+
 		return $this->fromSource($_REQUEST, $index, $default);
 	}
 
@@ -56,6 +62,8 @@ class Leviathan_Request extends Leviathan_GlobalsAbstract {
 	 * @return float|int|null|string
 	 */
 	public function server($index, $default = null) {
+		$this->purify($_SERVER, 'server');
+
 		return $this->fromSource($_SERVER, $index, $default);
 	}
 
@@ -67,6 +75,8 @@ class Leviathan_Request extends Leviathan_GlobalsAbstract {
 	 * @return string|array
 	 */
 	public function cookie($index, $default = null) {
+		$this->purify($_COOKIE, 'cookie');
+
 		return $this->fromSource($_COOKIE, $index, $default);
 	}
 }
