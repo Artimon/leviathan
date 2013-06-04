@@ -37,4 +37,11 @@ class Leviathan_Template {
 
 		return ob_get_clean();
 	}
+
+	/**
+	 * @return string
+	 */
+	public function json() {
+		return json_encode($this->data);
+	}
 }
