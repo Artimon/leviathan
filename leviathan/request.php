@@ -61,6 +61,24 @@ class Leviathan_Request extends Leviathan_GlobalsAbstract {
 	 * @param mixed $default
 	 * @return float|int|null|string
 	 */
+	public function json($index, $default = null) {
+		static $json;
+
+		if ($json === null) {
+			$json = file_get_contents('php://input');
+			$json = json_decode($json, true);
+		}
+
+		$this->purify($json, 'json');
+
+		return $this->fromSource($json, $index, $default);
+	}
+
+	/**
+	 * @param string $index
+	 * @param mixed $default
+	 * @return float|int|null|string
+	 */
 	public function server($index, $default = null) {
 		$this->purify($_SERVER, 'server');
 
