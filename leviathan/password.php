@@ -1,6 +1,6 @@
 <?php
 
-class Password {
+class Leviathan_Password {
 	/**
 	 * @param string $password
 	 * @param string $salt
