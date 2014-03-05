@@ -28,11 +28,6 @@ abstract class Leviathan_AController implements Leviathan_IController {
 	}
 
 	/**
-	 * @return array ['title', 'template']
-	 */
-	abstract protected function pageData();
-
-	/**
 	 * @return string
 	 */
 	public function route() {
