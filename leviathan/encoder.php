@@ -12,7 +12,7 @@ class Leviathan_Encoder {
 			return $string;
 		}
 
-		return utf8_encode($string);
+		return mb_convert_encoding($string, 'UTF-8', 'ISO-8859-1');
 	}
 
 	/**
@@ -20,7 +20,7 @@ class Leviathan_Encoder {
 	 */
 	public static function utf8decode($string) {
 		if (mb_check_encoding($string, 'UTF-8')) {
-			return utf8_decode($string);
+			return mb_convert_encoding($string, 'ISO-8859-1', 'UTF-8');
 		}
 
 		return $string;
