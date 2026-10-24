@@ -65,7 +65,7 @@ abstract class Leviathan_GlobalsAbstract {
 
 		$this->strip(
 			$data,
-			get_magic_quotes_gpc()
+			false
 		);
 
 		$memory[$key] = true;
